@@ -13,7 +13,8 @@ const menus = [{nombre:"Inicio", url:"index.html"},
             
         }
     }
-
+    
+    cargarmenu();
 
 let productodetalle = JSON.parse(localStorage.getItem("detalleproducto"));
 

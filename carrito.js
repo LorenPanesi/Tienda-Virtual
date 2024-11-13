@@ -10,8 +10,11 @@ const menus = [{nombre:"Inicio", url:"index.html"},
             let lista = document.createElement("li")
             lista.innerHTML=`<a href="${menu.url}">${menu.nombre}</a>`
             enlaces.appendChild(lista);
+            
         }
     }
+    
+    cargarmenu();
 
 let productocarritos = JSON.parse(localStorage.getItem("carrito"));
 
@@ -37,8 +40,10 @@ function cargarcarrito() {
 cargarcarrito();
 
 function eliminarproducto(id) {
-    alert("Desea eliminar este producto: " + id)
     let nodo = document.getElementById(id);
     nodo.remove();
 
+    productosActualizados = productocarritos.filter(producto => producto.id !== id);
+    const enJSON = JSON.stringify(productosActualizados);
+    localStorage.setItem("carrito", enJSON);
 }
