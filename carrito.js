@@ -66,7 +66,7 @@ const menus = [{nombre:"Inicio", url:"index.html"},
             let totalFila = document.createElement("tr");
             totalFila.innerHTML = `
                 <td colspan="5" style="text-align: right;">Total Final: $${total.toFixed(2)}</td>
-                <td><button onclick="finalizarCompra"Finalizar compra">Finalizar Compra</td>
+                <td><button onclick="finalizarCompra()"Finalizar compra">Finalizar Compra</td>
             `;
             enlaces.appendChild(totalFila);
             actualizarCarrito(cantidadTotal);
