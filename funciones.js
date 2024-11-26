@@ -16,9 +16,15 @@ const menus = [{nombre:"Inicio", url:"index.html"},
     
     cargarmenu();
     
-    const productos = [{nombre:"botines", precio:"190000", img:"imagenes/botines.jpeg", id: "1"},
-        {nombre:"remera", precio:"13000", img:"imagenes/remera.jpg", id:"2"},
-        {nombre:"short", precio:"11000", img:"imagenes/short.jpg", id:"3"} 
+    const productos = [{nombre:"Botines", precio:"190000", img:"imagenes/botines.jpeg", id: "1"},
+        {nombre:"Remera", precio:"13000", img:"imagenes/remera.jpg", id:"2"},
+        {nombre:"Short", precio:"11000", img:"imagenes/short.jpg", id:"3"},
+        {nombre:"Botines", precio:"82000", img:"imagenes/papifutbol.jpg", id:"4"},
+        {nombre:"Zapatillas", precio:"69000", img:"imagenes/zapas-puma.jpg", id:"5"},
+        {nombre:"Zapatillas", precio:"67000", img:"imagenes/zapas-puma2.jpg", id:"6"},
+        {nombre:"Zapatillas", precio:"79999", img:"imagenes/zapas-nike.jpg", id:"7"},
+        {nombre:"Medias", precio:"2500", img:"imagenes/medias.jpeg", id:"8"}
+
     ]
     
     function cargarproductos() {
