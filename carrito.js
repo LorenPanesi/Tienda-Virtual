@@ -1,7 +1,6 @@
 const menus = [{nombre:"Inicio", url:"index.html"},
-    {nombre:"¿Quienes somos?", url:"quienes.html"},
+    {nombre:"¿Quienes somos?", url:""},
     {nombre:"Contacto", url:"contacto.html"},
-    {nombre:"<span class=material-symbols-outlined>shopping_cart_checkout</span>", url:"carrito.html"},
     ]
     
     function cargarmenu(){
@@ -83,7 +82,16 @@ const menus = [{nombre:"Inicio", url:"index.html"},
     
     cargarCarrito();
     
-    
+    function actualizarCarrito(totalProductos) {
+    totalProductos = parseInt(totalProductos, 10); // Convertir a número entero
+
+    // Actualizar el contador en el ícono del carrito
+    const cantidadCarritoElement = document.getElementById("cantidad-carrito");
+    if (cantidadCarritoElement) {
+        cantidadCarritoElement.textContent = totalProductos;
+    }
+}
+
     function eliminarProducto(id) {
     productocarritos = productocarritos.filter(producto => producto.id !== id);
     localStorage.setItem("carrito", JSON.stringify(productocarritos));
