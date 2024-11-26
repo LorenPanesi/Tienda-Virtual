@@ -1,6 +1,6 @@
 const menus = [{nombre:"Inicio", url:"index.html"},
     {nombre:"¿Quienes somos?", url:""},
-    {nombre:"Contacto", url:"contacto.html"}
+    {nombre:"Contacto", url:"contacto.html"},
     ]
     
     function cargarmenu(){
