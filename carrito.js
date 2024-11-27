@@ -60,7 +60,7 @@ const menus = [{nombre:"Inicio", url:"index.html"},
                 total += producto.cantidad * producto.precio;
                 cantidadTotal += producto.cantidad;
             }
-    
+            localStorage.setItem("cantidadCarrito", cantidadTotal);
             
             let totalFila = document.createElement("tr");
             totalFila.innerHTML = `
@@ -69,7 +69,9 @@ const menus = [{nombre:"Inicio", url:"index.html"},
             `;
             enlaces.appendChild(totalFila);
             actualizarCarrito(cantidadTotal);
-    
+            localStorage.setItem("cantidadCarrito", totalProductos);
+            actualizarCarrito(totalProductos);
+
         } else {
             let mensaje = document.createElement("tr");
             mensaje.innerHTML = "<td colspan='6'>No hay productos en el carrito</td>";
@@ -111,6 +113,17 @@ const menus = [{nombre:"Inicio", url:"index.html"},
         const cantidadCarritoElement = document.getElementById("cantidad-carrito");
         if (cantidadCarritoElement) {
             cantidadCarritoElement.textContent = totalProductos;
+        }
+    }
+
+    function actualizarCarrito() {
+        // Recuperar la cantidad desde localStorage
+        let cantidadTotal = parseInt(localStorage.getItem("cantidadCarrito"), 10) || 0;
+    
+        // Actualizar el contador en el ícono del carrito
+        const cantidadCarritoElement = document.getElementById("cantidad-carrito");
+        if (cantidadCarritoElement) {
+            cantidadCarritoElement.textContent = cantidadTotal;
         }
     }
     

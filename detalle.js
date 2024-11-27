@@ -71,3 +71,19 @@ function cargarcarrito(){
     window.location.href= "carrito.html";
     }
 }
+
+function actualizarCarrito() {
+    // Recuperar la cantidad desde localStorage
+    let cantidadTotal = parseInt(localStorage.getItem("cantidadCarrito"), 10) || 0;
+
+    // Actualizar el contador en el ícono del carrito
+    const cantidadCarritoElement = document.getElementById("cantidad-carrito");
+    if (cantidadCarritoElement) {
+        cantidadCarritoElement.textContent = cantidadTotal;
+    }
+}
+
+
+window.addEventListener('DOMContentLoaded', function() {
+    actualizarCarrito();
+});
